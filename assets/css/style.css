@@ -5,7 +5,13 @@ color: white;
 
 .question-text {
     font-family: 'Gentium Basic', serif;
-    color:rgba(1, 7, 85, .9)
+    /* color:rgba(1, 7, 85, .9) */
+    background-color: rgba(254, 238, 215);
+}
+
+h2 {
+    font-family: 'Gentium Basic', serif;
+    color:rgba(1, 7, 85, .9);
     background-color: rgba(254, 238, 215);
 }
 
@@ -13,4 +19,12 @@ color: white;
 body {
     background-color: rgba(1, 7, 85, .9)!important; 
     margin: auto;
+    color: white;
+    padding: 20px;
+}
+
+
+input {
+    background-color: pink;
+
 }

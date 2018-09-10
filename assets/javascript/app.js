@@ -25,7 +25,7 @@ var jeopardyQuestionsG = [
   {
       category: "AN ALBUM COVER.",
       statement: "THIS IS THE COLOR OF THE BEATLES WHITE ALBUM",
-    options: {
+      question: {
       a: "WHAT IS PEACH?",
       b: "WHERE IS BLUE BLUE?",
       c: "WHAT IS WHITE?",
@@ -108,17 +108,34 @@ var quizCard = $('#quiz');
 var resultsCard = $('#results');
 //var button for $("#button")??
 function makeQuiz(){
-    
-    jeopardyQuestionsG.forEach(( ) => {
+    // var radio = $('<input type="radio">');
+    // $('#iddas').append(radio)
+    jeopardyQuestionsG.forEach((product, index) => {
         quizCard.append(
               `<label>
-                <h2>${jeopardyQuestionsG[0].statement}</h2>
-                <input type="radio" name="${jeopardyQuestionsG[0].question.a}" value="${jeopardyQuestionsG[0].question.a}">
-                <input type="radio" name="${jeopardyQuestionsG[0].question.b}" value="${jeopardyQuestionsG[0].question.b}">
-                <input type="radio" name="${jeopardyQuestionsG[0].question.c}" value="${jeopardyQuestionsG[0].question.c}">
+                <h2>${jeopardyQuestionsG[index].statement}</h2>
+                <p><input type="radio" name="${jeopardyQuestionsG[index].statement}" value="${jeopardyQuestionsG[index].question.a}"></input>
+                ${jeopardyQuestionsG[index].question.a}</p>
+                <p><input type="radio" name="${jeopardyQuestionsG[index].statement}" value="${jeopardyQuestionsG[index].question.b}">
+${jeopardyQuestionsG[index].question.b}</p>
+                <p><input type="radio" name="${jeopardyQuestionsG[index].statement}" value="${jeopardyQuestionsG[index].question.c}">
+                      ${jeopardyQuestionsG[index].question.c}</p>
                 
               </label>`
             )})
+
+            // jeopardyQuestionsG.forEach((product, index) => {
+            //   resultsCard.append(
+            //         `<label>
+            //           <p>${jeopardyQuestionsG[index].question.a}</p>
+            //           <input type="radio" name="${jeopardyQuestionsG[index].question.a}" value="${jeopardyQuestionsG[index].question.a}">
+            //           <p>${jeopardyQuestionsG[index].question.b}</p>
+            //           <input type="radio" name="${jeopardyQuestionsG[index].question.b}" value="${jeopardyQuestionsG[index].question.b}">
+            //           <p>${jeopardyQuestionsG[index].question.c}</p>
+            //           <input type="radio" name="${jeopardyQuestionsG[index].question.c}" value="${jeopardyQuestionsG[index].question.c}">
+                      
+            //         </label>`
+            //       )})
         
 }
       
