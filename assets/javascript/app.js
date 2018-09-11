@@ -1,8 +1,7 @@
 //______________________________________________________
 //GLOBAL VARIABLES
 //-----–––––––––––––––––––––––––––––––––––––––––––––––––
-var jeopardyQuestionsG = [
-  {
+var jeopardyQuestionsG = [{
     category: "AN ALBUM COVER.",
     statement: "STATES THAT END IN 'HAMPSHIRE'",
     question: {
@@ -13,8 +12,8 @@ var jeopardyQuestionsG = [
     answer: "b"
   },
   {
-      category: "MONTHS OF THE YEAR.",
-      statement: "THIS IS THE ONLY MONTH THAT STARTS WITH 'FEB'",
+    category: "MONTHS OF THE YEAR.",
+    statement: "THIS IS THE ONLY MONTH THAT STARTS WITH 'FEB'",
     question: {
       a: "WHAT IS FEBRUARY?",
       b: "WHAT IS FEBTOBER?",
@@ -23,9 +22,9 @@ var jeopardyQuestionsG = [
     answer: "a"
   },
   {
-      category: "AN ALBUM COVER.",
-      statement: "THIS IS THE COLOR OF THE BEATLES WHITE ALBUM",
-      question: {
+    category: "AN ALBUM COVER.",
+    statement: "THIS IS THE COLOR OF THE BEATLES WHITE ALBUM",
+    question: {
       a: "WHAT IS PEACH?",
       b: "WHERE IS BLUE BLUE?",
       c: "WHAT IS WHITE?",
@@ -33,8 +32,8 @@ var jeopardyQuestionsG = [
     answer: "c"
   },
   {
-      category: "'S' WORDS",
-      statement: "POPEYE IS THIS SORT OF MAN.",
+    category: "'S' WORDS",
+    statement: "POPEYE IS THIS SORT OF MAN.",
     question: {
       a: "WHAT IS...POPEYE?",
       b: "SABER!",
@@ -43,8 +42,8 @@ var jeopardyQuestionsG = [
     answer: "c"
   },
   {
-      category: "BODIES OF WATER",
-      statement: "THIS BODY OF WATER GAVE SALT LAKE CITY ITS NAME.",
+    category: "BODIES OF WATER",
+    statement: "THIS BODY OF WATER GAVE SALT LAKE CITY ITS NAME.",
     question: {
       a: "SWORDS?",
       b: "SALT LAKE?!",
@@ -53,8 +52,8 @@ var jeopardyQuestionsG = [
     answer: "b"
   },
   {
-      category: "MOVIES",
-      statement: "THIS RACING MOVIE WITH DOM DELUISE TOLD US THAT YES CANNONBALLS CAN RUN. 'CANNONBALLS CAN RUN.'",
+    category: "MOVIES",
+    statement: "THIS RACING MOVIE WITH DOM DELUISE TOLD US THAT YES CANNONBALLS CAN RUN. 'CANNONBALLS CAN RUN.'",
     question: {
       a: "THE CANNONBALL RUN?",
       b: "I DON'T KNOW, SHAEKESPEARE?",
@@ -63,8 +62,8 @@ var jeopardyQuestionsG = [
     answer: "c"
   },
   {
-      category: "MOVIES THAT START WITH THE WORD JAWS",
-      statement: "THIS MOVIE STARTS WITH THE WORD JAWS.",
+    category: "MOVIES THAT START WITH THE WORD JAWS",
+    statement: "THIS MOVIE STARTS WITH THE WORD JAWS.",
     question: {
       a: "WHAT IS SHARK WEEK?",
       b: "WHAT IS JAWS?",
@@ -73,8 +72,8 @@ var jeopardyQuestionsG = [
     answer: "b"
   },
   {
-      category: "CONDIMENTS",
-      statement: "THIS CONDIMENT IS MADE FROM MUSTARD SEEDS.",
+    category: "CONDIMENTS",
+    statement: "THIS CONDIMENT IS MADE FROM MUSTARD SEEDS.",
     question: {
       a: "THE ANSWER OF COURSE IS ONIONS.",
       b: "YEAH, WHAT DO YA WANT?",
@@ -83,8 +82,8 @@ var jeopardyQuestionsG = [
     answer: "c"
   },
   {
-      category: "ANIMAL SOUNDS",
-      statement: "THIS IS THE SOUND A DOGGY MAKES.",
+    category: "ANIMAL SOUNDS",
+    statement: "THIS IS THE SOUND A DOGGY MAKES.",
     question: {
       a: "MOO.",
       b: "RUFF.",
@@ -93,8 +92,8 @@ var jeopardyQuestionsG = [
     answer: "b"
   },
   {
-      category: "NUMBERS",
-      statement: "WRITE A NUMBER, ANY NUMBER AND YOU WIN.",
+    category: "NUMBERS",
+    statement: "WRITE A NUMBER, ANY NUMBER AND YOU WIN.",
     question: {
       a: "V.",
       b: "THREEVE. A COMBINATION OF THREE AND FIVE.",
@@ -106,103 +105,45 @@ var jeopardyQuestionsG = [
 
 var quizCard = $('#quiz');
 var resultsCard = $('#results');
-//var button for $("#button")??
-function makeQuiz(){
-    // var radio = $('<input type="radio">');
-    // $('#iddas').append(radio)
-    jeopardyQuestionsG.forEach((product, index) => {
-        quizCard.append(
-              `<label>
+
+function makeQuiz() {
+  jeopardyQuestionsG.forEach((product, index) => {
+    quizCard.append(
+      `<label>
                 <h2>${jeopardyQuestionsG[index].statement}</h2>
                 <p><input type="radio" name="${jeopardyQuestionsG[index].statement}" value="${jeopardyQuestionsG[index].question.a}"></input>
                 ${jeopardyQuestionsG[index].question.a}</p>
                 <p><input type="radio" name="${jeopardyQuestionsG[index].statement}" value="${jeopardyQuestionsG[index].question.b}">
-${jeopardyQuestionsG[index].question.b}</p>
+                ${jeopardyQuestionsG[index].question.b}</p>
                 <p><input type="radio" name="${jeopardyQuestionsG[index].statement}" value="${jeopardyQuestionsG[index].question.c}">
                       ${jeopardyQuestionsG[index].question.c}</p>
                 
-              </label>`
-            )})
+      </label>`
+    )
+  })}
 
-            // jeopardyQuestionsG.forEach((product, index) => {
-            //   resultsCard.append(
-            //         `<label>
-            //           <p>${jeopardyQuestionsG[index].question.a}</p>
-            //           <input type="radio" name="${jeopardyQuestionsG[index].question.a}" value="${jeopardyQuestionsG[index].question.a}">
-            //           <p>${jeopardyQuestionsG[index].question.b}</p>
-            //           <input type="radio" name="${jeopardyQuestionsG[index].question.b}" value="${jeopardyQuestionsG[index].question.b}">
-            //           <p>${jeopardyQuestionsG[index].question.c}</p>
-            //           <input type="radio" name="${jeopardyQuestionsG[index].question.c}" value="${jeopardyQuestionsG[index].question.c}">
-                      
-            //         </label>`
-            //       )})
-        
-}
-      
-        //     var options = []; //storing list of answer options
-      
-        //     // and for each available answer...
-        //     for(letter in currentQuestion.options){
-        //         // ...add an HTML radio button
-        // options.push(
-        //     // `<label>
-        //     //   <input type="radio" name="question${questionNumber}" value="${letter}">
-        //     //   ${letter} :
-        //     //   ${currentQuestion.options[letter]}
-        //     // </label>`
-          // );
-        //}
-         // add this question and its options to the output
-      // output.push(
-      //   `<div class="question"> ${currentQuestion.question} </div>
-      //   <div class="options"> ${options.join('')} </div>`
-      //);
-//     }
-//   );
-//   // quizCard.innerHTML = output.join(''); //howt to phrase in jQuery?
-// }
-
-
+makeQuiz();
 
 // function showResults(){
-//     // gather answer containers from our quiz
-//   var optionContainers = quizCard.html(jeopardyQuestionsG); //this will replace everything in the html
-//   //.append, .text
+//   var optionContainers = quizCard.html(jeopardyQuestionsG); 
+//   var numCorrect = 0;
+//   var numWrong = 0;
+//   var numBlank = 0;
 
-//   // keep track of user's answers
-//   let correctCounter = 0;
-
-//   jeopardyQuestionsG.forEach( (currentQuestion, questionNumber) => {
-
-//     // find selected answer
-//     var optionContainer;// = optionContainers[questionNumber];
-//     var selector ; //= 'input[name=question'+questionNumber+']:checked';
-//     var userPick ; //=(optionContainer.append(selector) || {}).value; //this is "or if it's empty"
-//      // if answer is correct
-//      if(userPick === currentQuestion.correctAnswer){
-//         // add to the number of correct answers
-//         correctCounter++;
-  
-//         // color the answers green
-//         //optionContainers[questionNumber].style.color = 'lightgreen';
+// jeopardyQuestionsG.forEach( (product, index) => {
+// //     var optionContainer; = optionContainers[questionNumber];
+// //     var selector ; //= 'input[name=question'+questionNumber+']:checked';
+//      var userPick =(optionContainer.append(selector) || {}).value; //this is "or if it's empty"
+//      if(userPick === jeopardyQuestionsG[index].answer){
+//          numCorrect++;
+//         }
+//       else if (userPick !== jeopardyQuestionsG[index].answer){
+//         numWrong++;
 //       }
-//       // if answer is wrong or blank
-//       else{
-//         // color the answers red
-//         //optionContainers[questionNumber].style.color = 'red';
+//       else {
+//         numBlank++;
 //       }
 //     });
-//     // show number of correct answers out of total
-//     resultsCard.innerHTML = correctCounter + ' out of ' + jeopardyQuestionsG.length;
-// }
-
-
-
-// display quiz right away
-
-
-// on submit, show results
-
-
- makeQuiz();
-//  showResults();
+// //     // show number of correct answers out of total
+//    resultsCard.innerHTML = numCorrect
+// // }
