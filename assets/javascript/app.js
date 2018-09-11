@@ -106,6 +106,10 @@ var jeopardyQuestionsG = [{
 var quizCard = $('#quiz');
 var resultsCard = $('#results');
 
+//______________________________________________________
+//FUNCTION DECLARATIONS
+//-----–––––––––––––––––––––––––––––––––––––––––––––––––
+
 function makeQuiz() {
   jeopardyQuestionsG.forEach((product, index) => {
     quizCard.append(
@@ -122,28 +126,53 @@ function makeQuiz() {
     )
   })}
 
+
+
+function showResults(){
+  var optionContainers = quizCard.append(jeopardyQuestionsG); 
+  var numCorrect = 0;
+  var numWrong = 0;
+  var numBlank = 0;
+
+jeopardyQuestionsG.forEach( (product, index) => {
+var optionContainer = optionContainers[index];
+var selector = `input[name= ${jeopardyQuestionsG[index]} + ]:checked`;
+//having trouble grabing this correctly
+var userPick =(optionContainer.append(selector) || {}).value; //this is "or if it's empty"
+     if(userPick === jeopardyQuestionsG[index].answer){
+         numCorrect++;
+        }
+      else if (userPick !== jeopardyQuestionsG[index].answer){
+        numWrong++;
+      }
+      else {
+        numBlank++;
+      }
+    });
+//     // show number of correct answers out of total
+   resultsCard.append("Correct Answers: "+ numCorrect);
+   resultsCard.append("Incorrect Answers: "+ numWrong);
+   resultsCard.append("Unanswered: "+ numBlank);
+
+   
+
+
+
+}
+//______________________________________________________
+//TIMER - ISSUES HERE
+//-----–––––––––––––––––––––––––––––––––––––––––––––––––
+// I can't get this to work 
+// var time = Date.now();
+// var running = setInterval(run, 10); // Save this so we can clear/cancel it later
+// setTimeout(function() {        // Set a timer
+//   clearInterval(running);      // Stop the running loop
+//   alert('Game over!');         // Let the user know, do other stuff here
+// }, 30000);   
+
+//______________________________________________________
+//FUNCTION CALLS
+//-----–––––––––––––––––––––––––––––––––––––––––––––––––
+
 makeQuiz();
-
-// function showResults(){
-//   var optionContainers = quizCard.html(jeopardyQuestionsG); 
-//   var numCorrect = 0;
-//   var numWrong = 0;
-//   var numBlank = 0;
-
-// jeopardyQuestionsG.forEach( (product, index) => {
-// //     var optionContainer; = optionContainers[questionNumber];
-// //     var selector ; //= 'input[name=question'+questionNumber+']:checked';
-//      var userPick =(optionContainer.append(selector) || {}).value; //this is "or if it's empty"
-//      if(userPick === jeopardyQuestionsG[index].answer){
-//          numCorrect++;
-//         }
-//       else if (userPick !== jeopardyQuestionsG[index].answer){
-//         numWrong++;
-//       }
-//       else {
-//         numBlank++;
-//       }
-//     });
-// //     // show number of correct answers out of total
-//    resultsCard.innerHTML = numCorrect
-// // }
+$("#submit").on("click", showResults);
